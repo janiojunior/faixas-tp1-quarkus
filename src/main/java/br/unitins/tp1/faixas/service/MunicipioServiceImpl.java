@@ -2,6 +2,7 @@ package br.unitins.tp1.faixas.service;
 
 import java.util.List;
 
+import br.unitins.tp1.faixas.model.Estado;
 import br.unitins.tp1.faixas.model.Municipio;
 import br.unitins.tp1.faixas.repository.MunicipioRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -35,7 +36,11 @@ public class MunicipioServiceImpl implements MunicipioService {
     @Override
     @Transactional
     public Municipio create(Municipio municipio) {
+        // buscando o estado a partir de um id do municipio
+        municipio.setEstado(estadoService.findById(municipio.getEstado().getId()));
+
         municipioRepository.persist(municipio);
+        
         return municipio;
     }
 
@@ -45,9 +50,9 @@ public class MunicipioServiceImpl implements MunicipioService {
         Municipio m = municipioRepository.findById(municipio.getId());
         m.setNome(municipio.getNome());
         // buscando o estado a partir de um id do municipio
-        m.setEstado(estadoService.findById(municipio.getId()));
-        
-        return municipio;
+        m.setEstado(estadoService.findById(municipio.getEstado().getId()));
+
+        return m;
     }
 
     @Override

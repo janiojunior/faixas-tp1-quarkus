@@ -1,6 +1,7 @@
 package br.unitins.tp1.faixas.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -9,6 +10,7 @@ public class Municipio extends DefaultEntity {
     private String nome;
 
     @ManyToOne
+    @JoinColumn(name = "id_estado")
     private Estado estado;
 
     public String getNome() {

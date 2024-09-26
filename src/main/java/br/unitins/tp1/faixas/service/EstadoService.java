@@ -2,6 +2,7 @@ package br.unitins.tp1.faixas.service;
 
 import java.util.List;
 
+import br.unitins.tp1.faixas.dto.EstadoDTORequest;
 import br.unitins.tp1.faixas.model.Estado;
 
 
@@ -13,9 +14,9 @@ public interface EstadoService {
 
     List<Estado> findAll();
 
-    Estado create(Estado estado);
+    Estado create(EstadoDTORequest dto);
 
-    Estado update(Estado estado);
+    Estado update(Long id, EstadoDTORequest dto);
 
     void delete(Long id); 
     
