@@ -2,7 +2,7 @@ package br.unitins.tp1.faixas.service;
 
 import java.util.List;
 
-import br.unitins.tp1.faixas.model.Estado;
+import br.unitins.tp1.faixas.dto.MunicipioRequestDTO;
 import br.unitins.tp1.faixas.model.Municipio;
 import br.unitins.tp1.faixas.repository.MunicipioRepository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -35,10 +35,13 @@ public class MunicipioServiceImpl implements MunicipioService {
 
     @Override
     @Transactional
-    public Municipio create(Municipio municipio) {
+    public Municipio create(MunicipioRequestDTO dto) {
         // buscando o estado a partir de um id do municipio
-        municipio.setEstado(estadoService.findById(municipio.getEstado().getId()));
+        Municipio municipio = new Municipio();
+        municipio.setEstado(estadoService.findById(dto.idEstado()));
+        municipio.setNome(dto.nome());
 
+        //salvando o municipio
         municipioRepository.persist(municipio);
         
         return municipio;
@@ -46,13 +49,15 @@ public class MunicipioServiceImpl implements MunicipioService {
 
     @Override
     @Transactional
-    public Municipio update(Municipio municipio) {
-        Municipio m = municipioRepository.findById(municipio.getId());
-        m.setNome(municipio.getNome());
-        // buscando o estado a partir de um id do municipio
-        m.setEstado(estadoService.findById(municipio.getEstado().getId()));
+    public Municipio update(Long id, MunicipioRequestDTO dto) {
+        Municipio municipio = municipioRepository.findById(id);
 
-        return m;
+        municipio.setNome(dto.nome());
+
+        // buscando o estado a partir de um id do municipio
+        municipio.setEstado(estadoService.findById(dto.idEstado()));
+
+        return municipio;
     }
 
     @Override

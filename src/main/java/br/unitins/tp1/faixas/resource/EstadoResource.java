@@ -2,7 +2,7 @@ package br.unitins.tp1.faixas.resource;
 
 import java.util.List;
 
-import br.unitins.tp1.faixas.dto.EstadoDTORequest;
+import br.unitins.tp1.faixas.dto.EstadoRequestDTO;
 import br.unitins.tp1.faixas.model.Estado;
 import br.unitins.tp1.faixas.service.EstadoService;
 import jakarta.inject.Inject;
@@ -42,14 +42,14 @@ public class EstadoResource {
     }
 
     @POST
-    public Estado create(EstadoDTORequest estado) {
+    public Estado create(EstadoRequestDTO estado) {
 
         return estadoService.create(estado);
     }
 
     @PUT
     @Path("/{id}")
-    public void update(@PathParam("id") Long id, EstadoDTORequest estado) {
+    public void update(@PathParam("id") Long id, EstadoRequestDTO estado) {
         estadoService.update(id, estado);
     }
 
