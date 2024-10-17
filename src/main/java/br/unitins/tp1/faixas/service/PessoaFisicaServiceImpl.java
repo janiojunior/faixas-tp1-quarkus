@@ -27,6 +27,11 @@ public class PessoaFisicaServiceImpl implements PessoaFisicaService {
     }
 
     @Override
+    public PessoaFisica findByCpf(String cpf) {
+        return pessoafisicaRepository.findByCpf(cpf);
+    }
+
+    @Override
     public List<PessoaFisica> findAll() {
         return pessoafisicaRepository.findAll().list();
     }

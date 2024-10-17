@@ -12,3 +12,9 @@ insert into estado (nome, sigla) values('Rio de Janeiro', 'RJ');
 insert into municipio (nome, id_estado) values('Palmas', 1);
 insert into municipio (nome, id_estado) values('Paraiso', 1);
 insert into municipio (nome, id_estado) values('Porto Nacional', 1);
+
+insert into Pessoa(nome) values ('Leandra');
+insert into Pessoa(nome) values ('Fredson');
+
+insert into PessoaFisica(id, cpf, sexo) values (1, '111', 1);
+insert into PessoaFisica(id, cpf, sexo) values (2, '222', 2);

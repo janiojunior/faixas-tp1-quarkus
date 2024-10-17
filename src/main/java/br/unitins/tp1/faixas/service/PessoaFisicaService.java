@@ -12,6 +12,8 @@ public interface PessoaFisicaService {
 
     List<PessoaFisica> findByNome(String nome);
 
+    PessoaFisica findByCpf(String cpf);
+
     List<PessoaFisica> findAll();
 
     PessoaFisica create(PessoaFisicaRequestDTO dto);

@@ -12,5 +12,9 @@ public class PessoaFisicaRepository implements PanacheRepository<PessoaFisica> {
     public List<PessoaFisica> findByNome(String nome) {
         return find("SELECT p FROM PessoaFisica p WHERE p.nome LIKE ?1", "%" + nome + "%").list();
     }
+
+    public PessoaFisica findByCpf(String cpf) {
+        return find("SELECT p FROM PessoaFisica p WHERE p.cpf = ?1",  cpf ).firstResult();
+    }
     
 }
