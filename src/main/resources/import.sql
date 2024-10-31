@@ -18,3 +18,6 @@ insert into Pessoa(nome) values ('Fredson');
 
 insert into PessoaFisica(id, cpf, sexo) values (1, '111', 1);
 insert into PessoaFisica(id, cpf, sexo) values (2, '222', 2);
+
+insert into Usuario(username, senha, perfil) values ('janio', '0cctg7WgpEz7kC/AzVC+KX+bZLPXDtgJDqWWZWnmzHH+7Na2YVxYYSFPxcf7ImAjqfNckx0aT4n5qKM7WEoeEQ==', 1);
+insert into Usuario(username, senha, perfil) values ('carloshenrique', '0cctg7WgpEz7kC/AzVC+KX+bZLPXDtgJDqWWZWnmzHH+7Na2YVxYYSFPxcf7ImAjqfNckx0aT4n5qKM7WEoeEQ==', 2);

@@ -16,6 +16,6 @@ public interface PedidoService {
 
     // implementar os patch's
 
-    void delete(Long id); 
+    // pensar no cancelar
     
 }
