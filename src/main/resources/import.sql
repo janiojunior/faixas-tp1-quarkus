@@ -4,6 +4,12 @@ insert into faixa (nome, preco) values('Faixa Roxa', 120.0);
 insert into faixa (nome, preco) values('Faixa Maron', 130.0);
 insert into faixa (nome, preco) values('Faixa Preta', 140.0);
 
+insert into lote (codigo, estoque, data, id_faixa) values('1111', 10, '2024-11-07', 1);
+insert into lote (codigo, estoque, data, id_faixa) values('1112', 5, '2024-11-06', 1);
+
+insert into lote (codigo, estoque, data, id_faixa) values('2221', 15, '2024-11-07', 1);
+insert into lote (codigo, estoque, data, id_faixa) values('2222', 10, '2024-11-06', 1);
+
 insert into estado (nome, sigla) values('Tocantins', 'TO');
 insert into estado (nome, sigla) values('Goiás', 'GO');
 insert into estado (nome, sigla) values('São Paulo', 'SP');

@@ -5,6 +5,7 @@ import java.util.List;
 import br.unitins.tp1.faixas.dto.EstadoRequestDTO;
 import br.unitins.tp1.faixas.model.Estado;
 import br.unitins.tp1.faixas.service.EstadoService;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
@@ -26,12 +27,14 @@ public class EstadoResource {
 
     @GET
     @Path("/{id}")
+    @RolesAllowed({"Adm", "User"})
     public Estado findById(@PathParam("id") Long id) {
         return estadoService.findById(id);
     }
 
     @GET
     @Path("/search/{nome}")
+    @RolesAllowed("Adm")
     public List<Estado> findByNome(@PathParam("nome") String nome) {
         return estadoService.findByNome(nome);
     }

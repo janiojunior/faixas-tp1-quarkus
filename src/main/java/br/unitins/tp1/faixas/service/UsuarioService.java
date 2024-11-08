@@ -11,6 +11,8 @@ public interface UsuarioService {
 
     Usuario findByUsernameAndSenha(String username, String senha);
 
+    Usuario findByUsername(String username);
+
     List<Usuario> findByNome(String nome);
 
     List<Usuario> findAll();

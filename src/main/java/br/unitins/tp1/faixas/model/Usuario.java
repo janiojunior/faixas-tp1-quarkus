@@ -1,10 +1,12 @@
 package br.unitins.tp1.faixas.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 @Entity
 public class Usuario extends DefaultEntity {
 
+    @Column(unique = true)
     private String username;
     private String senha;
     private Perfil perfil;
