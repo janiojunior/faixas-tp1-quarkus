@@ -5,8 +5,10 @@ import java.util.List;
 import br.unitins.tp1.faixas.dto.EstadoRequestDTO;
 import br.unitins.tp1.faixas.model.Estado;
 import br.unitins.tp1.faixas.service.EstadoService;
+import br.unitins.tp1.faixas.validation.ValidationException;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -46,7 +48,7 @@ public class EstadoResource {
 
     @POST
     public Estado create(EstadoRequestDTO estado) {
-
+        
         return estadoService.create(estado);
     }
 
