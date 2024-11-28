@@ -2,6 +2,8 @@ package br.unitins.tp1.faixas.resource;
 
 import java.util.List;
 
+import org.jboss.logging.Logger;
+
 import br.unitins.tp1.faixas.dto.EstadoRequestDTO;
 import br.unitins.tp1.faixas.model.Estado;
 import br.unitins.tp1.faixas.service.EstadoService;
@@ -24,6 +26,8 @@ import jakarta.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 public class EstadoResource {
 
+    private static final Logger LOG = Logger.getLogger(EstadoResource.class);
+
     @Inject
     public EstadoService estadoService;
 
@@ -31,6 +35,8 @@ public class EstadoResource {
     @Path("/{id}")
     @RolesAllowed({"Adm", "User"})
     public Estado findById(@PathParam("id") Long id) {
+        LOG.info("Execucao do metodo findById. Id: "+ id);
+        LOG.debug("DEBUG EXEMPLO");
         return estadoService.findById(id);
     }
 
